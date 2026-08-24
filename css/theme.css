@@ -1,0 +1,98 @@
+:root {
+    --primary: #722F37;   /* Burgundy */
+    --secondary: #F5F0E8; /* Creme */
+    --accent: #C9A84C;    /* Gold */
+    --text: #2B2B2B;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--secondary);
+    color: var(--text);
+    font-family: Georgia, serif;
+}
+
+.hero {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.small-hero {
+    padding: 80px 20px;
+}
+
+.hero-btn {
+    background: var(--accent);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px 40px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+}
+
+.info-list li {
+    margin-bottom: 10px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 18px;
+    border-radius: 6px;
+    border: 1px solid var(--accent);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.btn {
+    background: var(--primary);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    margin-top: 10px;
+}
+
+.note {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 24px;
+}
