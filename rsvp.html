@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RSVP – Shane & Stephanie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+<nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="engagement.html">Engagement Photos</a>
+    <a href="weekend-schedule.html">Weekend Schedule</a>
+    <a href="rsvp.html" class="active">RSVP</a>
+    <a href="registry.html">Registry</a>
+    <a href="guest-area.html">Guest Area</a>
+    <a href="parking.html">Parking</a>
+    <a href="things-to-do.html">Things To Do</a>
+</nav>
+
+<main class="container">
+    <h2 class="section-title">RSVP / Request Invite</h2>
+
+    <form id="rsvpForm" onsubmit="submitRSVP(event)">
+        <label>Name</label>
+        <input type="text" name="name" required class="form-control">
+
+        <label>Email</label>
+        <input type="email" name="email" required class="form-control">
+
+        <label>Attending?</label>
+        <select name="attending" class="form-control">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="Unsure">Unsure</option>
+        </select>
+
+        <label>Number of Guests</label>
+        <input type="number" name="guests" min="1" class="form-control">
+
+        <label>Message / Notes</label>
+        <textarea name="message" class="form-control"></textarea>
+
+        <button class="btn submit-btn" type="submit">Submit RSVP</button>
+    </form>
+
+    <p class="note">Your RSVP will be recorded and we’ll follow up with official details.</p>
+</main>
+
+<footer>
+    <p>Shane & Stephanie • 2026</p>
+</footer>
+
+<script src="js/rsvp.js"></script>
+</body>
+</html>
