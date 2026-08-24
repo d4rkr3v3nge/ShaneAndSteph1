@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register for an Invite – Shane & Stephanie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+
+<body>
+    <header class="hero small-hero">
+        <h1>Register for an Invite</h1>
+        <p>We’d love to know if you’d like to be part of our day.</p>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2 class="section-title">Guest Registration</h2>
+
+            <form id="regForm" onsubmit="submitRegistration(event)">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required class="form-control">
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required class="form-control">
+
+                <label for="phone">Phone (optional)</label>
+                <input id="phone" name="phone" type="text" class="form-control">
+
+                <label for="message">Message (optional)</label>
+                <textarea id="message" name="message" class="form-control"></textarea>
+
+                <button class="btn submit-btn" type="submit">Submit Registration</button>
+            </form>
+
+            <p class="note">
+                Your information will only be used to send wedding details and an official invite.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Shane & Stephanie • 2026</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
