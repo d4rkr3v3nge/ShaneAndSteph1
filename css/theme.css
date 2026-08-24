@@ -1,81 +1,256 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Shane & Stephanie – October 24, 2026</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+:root {
+    --primary: #722F37;
+    --secondary: #F5F0E8;
+    --accent: #C9A84C;
+    --text: #2B2B2B;
+}
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Georgia&display=swap" rel="stylesheet">
+* {
+    box-sizing: border-box;
+}
 
-    <!-- Theme -->
-    <link rel="stylesheet" href="css/theme.css">
-</head>
+body {
+    margin: 0;
+    background: var(--secondary);
+    color: var(--text);
+    font-family: Georgia, serif;
+    overflow-x: hidden;
+}
 
-<body>
+/* HERO */
+.hero {
+    background: linear-gradient(
+        rgba(114,47,55,0.75),
+        rgba(114,47,55,0.75)
+    ),
+    url('img/hero-bg.jpg') center/cover no-repeat fixed;
+    color: white;
+    text-align: center;
+    padding: 160px 20px;
+    animation: heroFade 1.8s ease;
+}
 
-<!-- SAVE THE DATE -->
-<div class="save-date">Save the Date • October 24, 2026</div>
+@keyframes heroFade {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-<!-- HERO -->
-<header class="hero">
-    <h1>Shane & Stephanie</h1>
-    <p>October 24, 2026 • Jim Thorpe, Pennsylvania</p>
-    <a href="rsvp.html" class="hero-btn">RSVP / Request Invite</a>
-</header>
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 18px rgba(0,0,0,0.4);
+}
 
-<!-- NAVIGATION -->
-<nav class="nav">
-    <a href="index.html" class="active">Home</a>
-    <a href="our-story.html">Our Story</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="engagement.html">Engagement Photos</a>
-    <a href="weekend-schedule.html">Weekend Schedule</a>
-    <a href="rsvp.html">RSVP</a>
-    <a href="registry.html">Registry</a>
-    <a href="guest-area.html">Guest Area</a>
-    <a href="parking.html">Parking</a>
-    <a href="things-to-do.html">Things To Do</a>
-</nav>
+.hero p {
+    font-size: 1.6rem;
+    opacity: 0.95;
+}
 
-<!-- MAIN CONTENT -->
-<main class="container fade-section">
+.hero-btn {
+    background: var(--accent);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    transition: box-shadow 0.3s ease;
+}
 
-    <h2 class="section-title">Welcome</h2>
-    <div class="gold-divider"></div>
+.hero-btn:hover {
+    box-shadow: 0 0 18px rgba(201,168,76,0.7);
+}
 
-    <p style="text-align:center; font-size:1.2rem; line-height:1.7;">
-        We’re so excited to celebrate with you in beautiful Jim Thorpe, Pennsylvania.
-        This site has everything you need for the weekend — details, RSVP, travel, and more.
-    </p>
+/* SAVE THE DATE */
+.save-date {
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
 
-    <!-- FEATURED MOMENTS -->
-    <section class="fade-section" style="margin-top:50px;">
-        <h2 class="section-title">Featured Moments</h2>
-        <div class="gold-divider"></div>
+/* NAVIGATION */
+.nav {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.75);
+    border-bottom: 1px solid var(--accent);
+    padding: 14px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    justify-content: center;
+    z-index: 1000;
+}
 
-        <div class="event-card">
-            <h3>Our Story</h3>
-            <p>A journey that began with a spark and grew into forever.</p>
-            <a href="our-story.html" class="btn">Read More</a>
-        </div>
+.nav a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 4px;
+}
 
-        <div class="event-card">
-            <h3>Engagement Photos</h3>
-            <p>Captured moments from the day we said “yes”.</p>
-            <a href="engagement.html" class="btn">View Photos</a>
-        </div>
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
 
-        <div class="event-card">
-            <h3>Weekend Schedule</h3>
-            <p>Everything you need to know for the celebration.</p>
-            <a href="weekend-schedule.html" class="btn">View Schedule</a>
-        </div>
-    </section>
+.nav a:hover::after,
+.nav a.active::after {
+    width: 100%;
+}
 
-</main>
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px 60px;
+}
 
-<!-- FLOATING RSVP BUTTON -->
-<a href="rsvp.html" class="floating-rsvp">RSVP</a>
+.section-title {
+    text-align: center;
+    color: var(--primary);
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
 
-<!-- FOOTER -->
+.gold-divider {
+    height: 3px;
+    width: 90px;
+    background: var(--accent);
+    margin: 20px auto 30px;
+    border-radius: 3px;
+}
+
+/* FADE-IN SECTIONS */
+.fade-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s ease;
+}
+
+.fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CARDS */
+.timeline-item,
+.event-card {
+    background: #fff;
+    border-left: 4px solid var(--accent);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover,
+.event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+}
+
+/* FORMS */
+.form-control {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 22px;
+    border-radius: 6px;
+    border: 1px solid var(--accent);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.btn {
+    background: var(--primary);
+    color: white;
+    padding: 12px 26px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    box-shadow: 0 0 12px rgba(201,168,76,0.6);
+}
+
+/* SLIDESHOW */
+.slideshow {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.slideshow img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1.4rem;
+}
+
+.slide-btn:nth-of-type(1) {
+    left: 10px;
+}
+
+.slide-btn:nth-of-type(2) {
+    right: 10px;
+}
+
+/* FLOATING RSVP */
+.floating-rsvp {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--accent);
+    color: white;
+    padding: 14px 26px;
+    border-radius: 50px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 2000;
+    transition: box-shadow 0.3s ease;
+}
+
+.floating-rsvp:hover {
+    box-shadow: 0 0 18px rgba(201,168,76,0.7);
+}
+
+/* FOOTER */
+footer {
+    background: linear-gradient(90deg, var(--primary), #5e2430);
+    color: white;
+    text-align: center;
+    padding: 32px;
+    font-size: 1.1rem;
+}
