@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Engagement Photos – Shane & Stephanie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+<nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="engagement.html" class="active">Engagement Photos</a>
+    <a href="weekend-schedule.html">Weekend Schedule</a>
+    <a href="rsvp.html">RSVP</a>
+    <a href="registry.html">Registry</a>
+    <a href="guest-area.html">Guest Area</a>
+    <a href="parking.html">Parking</a>
+    <a href="things-to-do.html">Things To Do</a>
+</nav>
+
+<main class="container">
+    <h2 class="section-title">Engagement Photos</h2>
+
+    <div class="slideshow" id="engagement-slideshow">
+        <img src="img/engagement/photo1.jpg" alt="Engagement photo">
+        <button class="slide-btn" onclick="prevSlide('engagement')">‹</button>
+        <button class="slide-btn" onclick="nextSlide('engagement')">›</button>
+    </div>
+</main>
+
+<footer>
+    <p>Shane & Stephanie • 2026</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
