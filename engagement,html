@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
+
 <nav class="nav">
     <a href="index.html">Home</a>
     <a href="our-story.html">Our Story</a>
@@ -20,8 +21,9 @@
     <a href="things-to-do.html">Things To Do</a>
 </nav>
 
-<main class="container">
+<main class="container fade-section">
     <h2 class="section-title">Engagement Photos</h2>
+    <div class="gold-divider"></div>
 
     <div class="slideshow" id="engagement-slideshow">
         <img src="img/engagement/photo1.jpg" alt="Engagement photo">
