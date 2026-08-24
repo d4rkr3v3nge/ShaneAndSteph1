@@ -1,77 +1,81 @@
-.hero {
-    background: linear-gradient(
-        rgba(114,47,55,0.75),
-        rgba(114,47,55,0.75)
-    ),
-    url('img/hero-bg.jpg') center/cover no-repeat fixed;
-    color: white;
-    text-align: center;
-    padding: 160px 20px;
-    animation: heroFade 1.8s ease;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shane & Stephanie – October 24, 2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@keyframes heroFade {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Georgia&display=swap" rel="stylesheet">
 
-.hero h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 5rem;
-    letter-spacing: 2px;
-    text-shadow: 0 0 18px rgba(0,0,0,0.4);
-}
+    <!-- Theme -->
+    <link rel="stylesheet" href="css/theme.css">
+</head>
 
-.hero p {
-    font-size: 1.6rem;
-    opacity: 0.95;
-}
-.nav {
-    position: sticky;
-    top: 0;
-    backdrop-filter: blur(12px);
-    background: rgba(255,255,255,0.75);
-    border-bottom: 1px solid var(--accent);
-    padding: 14px 24px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 22px;
-    justify-content: center;
-    z-index: 1000;
-}
+<body>
 
-.nav a {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 600;
-    position: relative;
-    padding-bottom: 4px;
-}
+<!-- SAVE THE DATE -->
+<div class="save-date">Save the Date • October 24, 2026</div>
 
-.nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background: var(--accent);
-    transition: width 0.3s ease;
-}
+<!-- HERO -->
+<header class="hero">
+    <h1>Shane & Stephanie</h1>
+    <p>October 24, 2026 • Jim Thorpe, Pennsylvania</p>
+    <a href="rsvp.html" class="hero-btn">RSVP / Request Invite</a>
+</header>
 
-.nav a:hover::after,
-.nav a.active::after {
-    width: 100%;
-}
-.fade-section {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.9s ease;
-}
+<!-- NAVIGATION -->
+<nav class="nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="engagement.html">Engagement Photos</a>
+    <a href="weekend-schedule.html">Weekend Schedule</a>
+    <a href="rsvp.html">RSVP</a>
+    <a href="registry.html">Registry</a>
+    <a href="guest-area.html">Guest Area</a>
+    <a href="parking.html">Parking</a>
+    <a href="things-to-do.html">Things To Do</a>
+</nav>
 
-.fade-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+<!-- MAIN CONTENT -->
+<main class="container fade-section">
 
+    <h2 class="section-title">Welcome</h2>
+    <div class="gold-divider"></div>
 
+    <p style="text-align:center; font-size:1.2rem; line-height:1.7;">
+        We’re so excited to celebrate with you in beautiful Jim Thorpe, Pennsylvania.
+        This site has everything you need for the weekend — details, RSVP, travel, and more.
+    </p>
+
+    <!-- FEATURED MOMENTS -->
+    <section class="fade-section" style="margin-top:50px;">
+        <h2 class="section-title">Featured Moments</h2>
+        <div class="gold-divider"></div>
+
+        <div class="event-card">
+            <h3>Our Story</h3>
+            <p>A journey that began with a spark and grew into forever.</p>
+            <a href="our-story.html" class="btn">Read More</a>
+        </div>
+
+        <div class="event-card">
+            <h3>Engagement Photos</h3>
+            <p>Captured moments from the day we said “yes”.</p>
+            <a href="engagement.html" class="btn">View Photos</a>
+        </div>
+
+        <div class="event-card">
+            <h3>Weekend Schedule</h3>
+            <p>Everything you need to know for the celebration.</p>
+            <a href="weekend-schedule.html" class="btn">View Schedule</a>
+        </div>
+    </section>
+
+</main>
+
+<!-- FLOATING RSVP BUTTON -->
+<a href="rsvp.html" class="floating-rsvp">RSVP</a>
+
+<!-- FOOTER -->
