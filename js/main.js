@@ -64,3 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.location.href = "success.html";
 }
+document.addEventListener("scroll", () => {
+    document.querySelectorAll(".fade-section").forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 120) {
+            sec.classList.add("visible");
+        }
+    });
+});
