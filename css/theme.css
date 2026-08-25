@@ -260,6 +260,49 @@ body {
     box-shadow: 0 0 18px rgba(201,168,76,0.7);
 }
 
+/* Fix RSVP form visibility */
+.rsvp-form, #rsvpForm {
+    display: block;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    margin-top: 40px;
+    color: #2B2B2B;
+}
+
+.rsvp-form label,
+#rsvpForm label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea,
+#rsvpForm input,
+#rsvpForm select,
+#rsvpForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.submit-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
 /* FOOTER */
 footer {
     background: linear-gradient(90deg, var(--primary), #5e2430);
