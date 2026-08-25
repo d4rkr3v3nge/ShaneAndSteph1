@@ -12,7 +12,7 @@ function submitRSVP(event) {
         message: data.get("message")
     };
 
-    const url = "https://script.google.com/macros/s/YOUR_RSVP_SCRIPT_ID/exec";
+    const url = "https://script.google.com/macros/s/AKfycbzsqNCUDcS6bpuqkO9rnEjYuakxlb0NiqvZllgUuAsxTJeKjZx2LxyQqVr0QRb47rA/exec";
 
     fetch(url, {
         method: "POST",
