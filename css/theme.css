@@ -302,6 +302,11 @@ body {
     font-size: 18px;
 }
 
+/* Force RSVP form to be visible */
+#rsvpForm {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
 
 /* FOOTER */
 footer {
