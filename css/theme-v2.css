@@ -4,6 +4,13 @@
     --accent: #C9A84C;
     --text: #2B2B2B;
 }
+.jimthorpe-font {
+    font-family: 'JimThorpe', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 
 * {
     box-sizing: border-box;
@@ -16,6 +23,13 @@ body {
     font-family: Georgia, serif;
     overflow-x: hidden;
 }
+.jimthorpe-font {
+    font-family: 'JimThorpe', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 
 /* HERO */
 .hero {
@@ -244,6 +258,54 @@ body {
 
 .floating-rsvp:hover {
     box-shadow: 0 0 18px rgba(201,168,76,0.7);
+}
+
+/* Fix RSVP form visibility */
+.rsvp-form, #rsvpForm {
+    display: block;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    margin-top: 40px;
+    color: #2B2B2B;
+}
+
+.rsvp-form label,
+#rsvpForm label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea,
+#rsvpForm input,
+#rsvpForm select,
+#rsvpForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.submit-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Force RSVP form to be visible */
+#rsvpForm {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 /* FOOTER */
