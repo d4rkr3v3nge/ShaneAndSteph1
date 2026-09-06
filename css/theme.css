@@ -24,18 +24,14 @@ body {
     overflow-x: hidden;
 }
 
-/* HERO */
 .hero {
-    background: linear-gradient(
-        rgba(114,47,55,0.75),
-        rgba(114,47,55,0.75)
-    ),
-    url('img/hero-bg.jpg') center/cover no-repeat fixed;
+    background: var(--primary); /* solid maroon */
     color: white;
     text-align: center;
     padding: 160px 20px;
     animation: heroFade 1.8s ease;
 }
+
 
 @keyframes heroFade {
     from { opacity: 0; transform: translateY(30px); }
