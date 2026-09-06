@@ -86,6 +86,13 @@ body {
     letter-spacing: 2px;
     text-shadow: 0 0 18px rgba(0,0,0,0.4);
 }
+h1 {
+    font-family: 'Great Vibes', cursive;
+}
+
+body {
+    font-family: Georgia, serif;
+}
 
 .hero p {
     font-size: 1.6rem;
