@@ -6,7 +6,7 @@
 }
 
 .jimthorpe-font {
-    font-family: 'JimThorpe', sans-serif;
+    font-family: 'JimThorpe', georgia;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -72,10 +72,13 @@ body {
     background: var(--accent);
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 18px 0;          /* bigger height */
+    font-size: 1.3rem;        /* larger text */
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 2px;      /* more spacing for elegance */
+    text-transform: uppercase;
 }
+
 
 /* NAVIGATION */
 .nav {
