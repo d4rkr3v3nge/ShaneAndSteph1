@@ -4,8 +4,7 @@ function submitRSVP(event) {
     const form = document.getElementById("rsvpForm");
     const data = new FormData(form);
 
-    // Security fields
-    data.append("token", "8Y5Wv99i8PW%b0");  // your real token
+    data.append("token", "8Y5Wv99i8PW%b0");
     data.append("ip", "");
     data.append("ua", navigator.userAgent);
 
@@ -16,14 +15,10 @@ function submitRSVP(event) {
     .then(res => res.text())
     .then(result => {
         if (result === "OK") {
-            alert("RSVP submitted successfully!");
+            alert("RSVP submitted successfully! A confirmation email has been sent.");
             form.reset();
         } else if (result === "RATE_LIMIT") {
             alert("Too many submissions. Please try again later.");
-        } else if (result === "BOT") {
-            alert("Submission blocked.");
-        } else if (result === "INVALID_TOKEN") {
-            alert("Submission blocked.");
         } else {
             alert("Submission blocked.");
         }
