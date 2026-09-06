@@ -5,11 +5,11 @@ function submitRSVP(event) {
     const data = new FormData(form);
 
     // Security fields
-    data.append("token", "YOUR_SECRET_TOKEN_HERE");
+    data.append("token", "8Y5Wv99i8PW%b0");  // your real token
     data.append("ip", "");
     data.append("ua", navigator.userAgent);
 
-    fetch("YOUR_GOOGLE_SCRIPT_URL", {
+    fetch("https://script.google.com/macros/s/AKfycbziGTfbwfR6p5YjV3x0iyHe_1wZNGMbVxYpavFPbLJJSj3TSvIsZl8YwABW2GzESAJ7vQ/exec", {
         method: "POST",
         body: data
     })
