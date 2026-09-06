@@ -25,17 +25,31 @@ body {
 }
 
 /* HERO */
+/* Reduce hero height */
 .hero {
-    background: linear-gradient(
-        rgba(114,47,55,0.75),
-        rgba(114,47,55,0.75)
-    ),
-    url('img/hero-bg.jpg') center/cover no-repeat fixed;
-    color: white;
-    text-align: center;
-    padding: 160px 20px;
-    animation: heroFade 1.8s ease;
+    padding: 20px 0;        /* was likely 60–100px */
+    margin-bottom: 20px;    /* tighten spacing before nav */
 }
+
+/* Reduce name size */
+.hero h1 {
+    font-size: 2.4rem;      /* adjust as needed */
+    margin: 10px 0 5px 0;
+}
+
+/* Reduce date/location size */
+.hero p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Reduce RSVP button spacing */
+.hero-btn {
+    margin-top: 15px;
+    padding: 8px 18px;
+    font-size: 1rem;
+}
+
 
 /* Newspaper effect */
 .newspaper {
