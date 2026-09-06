@@ -15,8 +15,8 @@ function submitRSVP(event) {
     .then(res => res.text())
     .then(result => {
         if (result === "OK") {
-            alert("RSVP submitted successfully! A confirmation email has been sent.");
-            form.reset();
+            // Redirect to thank-you page
+            window.location.href = "https://d4rkr3v3nge.github.io/ShaneAndSteph1/thankyou.html";
         } else if (result === "RATE_LIMIT") {
             alert("Too many submissions. Please try again later.");
         } else {
