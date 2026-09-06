@@ -4,22 +4,32 @@ function submitRSVP(event) {
     const form = document.getElementById("rsvpForm");
     const data = new FormData(form);
 
-    const payload = {
-        name: data.get("name"),
-        email: data.get("email"),
-        attending: data.get("attending"),
-        guests: data.get("guests"),
-        message: data.get("message")
-    };
+    // Security fields
+    data.append("token", "YOUR_SECRET_TOKEN_HERE");
+    data.append("ip", "");
+    data.append("ua", navigator.userAgent);
 
-    const url = "https://script.google.com/macros/s/AKfycbzsqNCUDcS6bpuqkO9rnEjYuakxlb0NiqvZllgUuAsxTJeKjZx2LxyQqVr0QRb47rA/exec";
-
-    fetch(url, {
+    fetch("YOUR_GOOGLE_SCRIPT_URL", {
         method: "POST",
-        mode: "no-cors",
-        body: JSON.stringify(payload)
-    }).catch(console.error);
-
-    alert("Thank you! Your RSVP has been recorded.");
-    form.reset();
+        body: data
+    })
+    .then(res => res.text())
+    .then(result => {
+        if (result === "OK") {
+            alert("RSVP submitted successfully!");
+            form.reset();
+        } else if (result === "RATE_LIMIT") {
+            alert("Too many submissions. Please try again later.");
+        } else if (result === "BOT") {
+            alert("Submission blocked.");
+        } else if (result === "INVALID_TOKEN") {
+            alert("Submission blocked.");
+        } else {
+            alert("Submission blocked.");
+        }
+    })
+    .catch(err => {
+        alert("Error submitting RSVP.");
+        console.error(err);
+    });
 }
