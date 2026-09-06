@@ -12,6 +12,16 @@
     text-transform: uppercase;
 }
 
+.center-photo img {
+    width: 40%;          /* shrink the image */
+    max-width: 350px;    /* hard limit so it never gets too big */
+    border-radius: 12px;
+    opacity: 0.95;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+
 * {
     box-sizing: border-box;
 }
