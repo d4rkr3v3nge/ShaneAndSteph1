@@ -26,20 +26,15 @@ body {
 
 
 .hero {
-    text-align: center;
-    padding: 25px 0;        /* reduced from large padding */
-    margin: 0 auto;
+    padding: 10px 0;
 }
 
 .hero h1 {
-    font-size: 2.6rem;      /* elegant but not huge */
-    margin: 10px 0 5px 0;
-    font-family: 'Jimthorpe', serif;
+    font-size: 2rem;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin: 0;
+    font-size: 1rem;
 }
 
 .hero-btn {
