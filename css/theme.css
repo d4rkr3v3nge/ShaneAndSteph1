@@ -13,13 +13,14 @@
 }
 
 .center-photo img {
-    width: 80%;          /* shrink the image */
-    max-width: 250px;    /* hard limit so it never gets too big */
+    width: 80%;
+    max-width: 250px;
     border-radius: 12px;
     opacity: 0.95;
     display: block;
-    margin: 2 auto 20px;
+    margin: 0 auto 20px;   /* THIS centers the image */
 }
+
 
 
 * {
