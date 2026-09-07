@@ -91,5 +91,35 @@
 </footer>
 
 <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".photo-grid img");
+
+    images.forEach(img => {
+        img.onload = function () {
+            EXIF.getData(img, function () {
+                const orientation = EXIF.getTag(this, "Orientation");
+
+                switch (orientation) {
+                    case 3:
+                        img.style.transform = "rotate(180deg)";
+                        break;
+                    case 6:
+                        img.style.transform = "rotate(90deg)";
+                        break;
+                    case 8:
+                        img.style.transform = "rotate(-90deg)";
+                        break;
+                    default:
+                        img.style.transform = "rotate(0deg)";
+                }
+            });
+        };
+    });
+});
+</script>
+
 </body>
 </html>
