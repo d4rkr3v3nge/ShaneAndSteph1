@@ -13,14 +13,22 @@
     <!-- Theme -->
     <link rel="stylesheet" href="css/theme.css">
 
+    <!-- Homepage Title Override -->
     <style>
         .homepage-title {
-            color: #4a3f35 !important;
+            color: #4a3f35 !important;      /* Neutral color */
             font-family: Georgia, serif !important;
+            font-size: 2.8rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .homepage-title span {
+            font-family: 'Great Vibes', cursive !important;
+            font-size: 3.2rem;
+            color: #7a1f1f; /* Burgundy ampersand */
         }
     </style>
 </head>
-
 
 <body>
 
@@ -29,15 +37,17 @@
 
 <!-- HERO -->
 <header class="hero">
-            <div class="center-photo">
+    <div class="center-photo">
         <img src="img/engagement/ShaneAndSteph1.png" alt="Shane and Stephanie">
-                
-    <h1 class="georgia">Shane Oliver Sparks <p>& </p> Stephanie Leigh Summers</h1>
 
-    <p class="jimthorpe-font">October 24, 2026 • Jim Thorpe, Pennsylvania</p>
-    <a href="rsvp.html" class="hero-btn jimthorpe-font">RSVP / Request Invite</a>
+        <!-- FIXED TITLE -->
+        <h1 class="homepage-title">
+            Shane Oliver Sparks <span>&</span> Stephanie Leigh Summers
+        </h1>
 
-
+        <p class="jimthorpe-font">October 24, 2026 • Jim Thorpe, Pennsylvania</p>
+        <a href="rsvp.html" class="hero-btn jimthorpe-font">RSVP / Request Invite</a>
+    </div>
 </header>
 
 <!-- NAVIGATION -->
@@ -45,7 +55,6 @@
     <a href="index.html" class="active">Home</a>
     <a href="our-story.html">Our Story</a>
     <a href="gallery.html">Gallery</a>
-     
     <a href="weekend-schedule.html">Weekend Schedule</a>
     <a href="rsvp.html">RSVP</a>
     <a href="registry.html">Registry</a>
@@ -57,15 +66,12 @@
 <!-- MAIN CONTENT -->
 <main class="container fade-section">
 
-    <!-- Center Photo -->
-
-
     <!-- Welcome Section -->
     <h2 class="section-title jimthorpe-font">Welcome</h2>
     <div class="gold-divider"></div>
 
     <p style="text-align:center; font-size:1.2rem; line-height:1.7;">
-       Yes, Stephanie and Shane are finally making it official. 
+       Yes, Stephanie and Shane are finally making it official.
     </p>
 
     <!-- FEATURED MOMENTS -->
@@ -102,7 +108,6 @@
     <p>Shane & Stephanie • 2026</p>
     <img src="img/footer-logo.png" alt="Summers Sparks Logo" class="footer-logo">
 </footer>
-
 
 <script src="js/main.js"></script>
 </body>
