@@ -389,5 +389,15 @@ footer {
     font-weight: bold;
 }
 
+.schedule-photo img {
+    width: 100%;
+    max-width: 700px;
+    display: block;
+    margin: 25px auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+
 
 
