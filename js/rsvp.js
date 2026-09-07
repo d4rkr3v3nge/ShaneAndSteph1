@@ -17,7 +17,7 @@ function submitRSVP(event) {
         userAgent: navigator.userAgent
     };
 
-    fetch("https://script.google.com/macros/s/AKfycbxqKsqjtGHeKLWB0uqodBQetlYpyhV0wdHc2bVldcf-qw4l32i9eOo53WUE-PSmkFk8/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbznDgToSTUbaQ5kqVnoxzPq1oB2GW59Gfbyl7IY70zWNxW3gP1ruMk2hqKgqJOlEUvo/exec", {
         method: "POST",
         mode: "no-cors",
         headers: {
