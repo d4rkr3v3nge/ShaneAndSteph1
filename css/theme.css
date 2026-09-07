@@ -397,6 +397,23 @@ footer {
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
+.venmo-box {
+    text-align: center;
+    background: #faf7f2;
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 450px;
+    margin: 30px auto;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.venmo-qr {
+    width: 160px;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
 
 
 
