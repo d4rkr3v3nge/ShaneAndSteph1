@@ -1,3 +1,9 @@
+/**
+ * @see https://developers.google.com/apps-script/guides/services/authorization
+ */
+
+
+
 function submitRSVP(event) {
     event.preventDefault();
 
