@@ -18,19 +18,19 @@
         }
 
         .container {
-            max-width: 700px;
-            margin: 80px auto;
+            max-width: 800px;
+            margin: 60px auto;
             background: #ffffff;
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            text-align: center;
         }
 
         h1 {
             font-family: 'Great Vibes', cursive;
             font-size: 3.2rem;
             color: #7a1f1f;
+            text-align: center;
             margin-bottom: 10px;
         }
 
@@ -42,10 +42,26 @@
             border-radius: 2px;
         }
 
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 30px;
+            color: #7a1f1f;
+        }
+
         p {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             line-height: 1.7;
-            margin: 20px 0;
+        }
+
+        .detail-box {
+            background: #f3ece6;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .detail-box p {
+            margin: 8px 0;
         }
 
         .home-btn {
@@ -72,56 +88,41 @@
     <h1>Thank You</h1>
     <div class="divider"></div>
 
-    <p>
+    <p style="text-align:center;">
         Shane and Stephanie are so grateful for your RSVP.
     </p>
 
-    <p id="message">
-        <!-- This message will be replaced dynamically based on attending status -->
-        We’re looking forward to celebrating with you!
-    </p>
+    <h2>Your Submission</h2>
 
-    <h2>Your RSVP Details</h2>
-
-<p><strong>Name:</strong> <span id="name"></span></p>
-<p><strong>Email:</strong> <span id="email"></span></p>
-<p><strong>Attending:</strong> <span id="attending"></span></p>
-<p><strong>Street:</strong> <span id="street"></span></p>
-<p><strong>City:</strong> <span id="city"></span></p>
-<p><strong>State:</strong> <span id="state"></span></p>
-<p><strong>Zipcode:</strong> <span id="zipcode"></span></p>
-<p><strong>Guests:</strong> <span id="guests"></span></p>
-<p><strong>Message:</strong> <span id="message"></span></p>
-
+    <div class="detail-box">
+        <p><strong>Name:</strong> <span id="name"></span></p>
+        <p><strong>Email:</strong> <span id="email"></span></p>
+        <p><strong>Attending:</strong> <span id="attending"></span></p>
+        <p><strong>Invitation:</strong> <span id="invitationOnly"></span></p>
+        <p><strong>Street:</strong> <span id="street"></span></p>
+        <p><strong>City:</strong> <span id="city"></span></p>
+        <p><strong>State:</strong> <span id="state"></span></p>
+        <p><strong>Zipcode:</strong> <span id="zipcode"></span></p>
+        <p><strong>Total Guests:</strong> <span id="guests"></span></p>
+        <p><strong>Message:</strong> <span id="message"></span></p>
+    </div>
 
     <a href="index.html" class="home-btn">Return to Home</a>
 </div>
-<script>
-  const params = new URLSearchParams(window.location.search);
-
-  document.getElementById("name").textContent = params.get("name");
-  document.getElementById("email").textContent = params.get("email");
-  document.getElementById("attending").textContent = params.get("attending");
-  document.getElementById("street").textContent = params.get("street");
-  document.getElementById("city").textContent = params.get("city");
-  document.getElementById("state").textContent = params.get("state");
-  document.getElementById("zipcode").textContent = params.get("zipcode");
-  document.getElementById("guests").textContent = params.get("guests");
-  document.getElementById("message").textContent = params.get("message");
-</script>
 
 <script>
-    // Detect attending status from URL parameters
     const params = new URLSearchParams(window.location.search);
-    const attending = params.get("attending");
 
-    const messageEl = document.getElementById("message");
-
-    if (attending === "Yes") {
-        messageEl.textContent = "Shane and Stephanie are looking forward to celebrating with you!";
-    } else if (attending === "No") {
-        messageEl.textContent = "Sorry to hear you can’t make it — but thank you for letting us know.";
-    }
+    document.getElementById("name").textContent = params.get("name");
+    document.getElementById("email").textContent = params.get("email");
+    document.getElementById("attending").textContent = params.get("attending");
+    document.getElementById("invitationOnly").textContent = params.get("invitationOnly");
+    document.getElementById("street").textContent = params.get("street");
+    document.getElementById("city").textContent = params.get("city");
+    document.getElementById("state").textContent = params.get("state");
+    document.getElementById("zipcode").textContent = params.get("zipcode");
+    document.getElementById("guests").textContent = params.get("guests");
+    document.getElementById("message").textContent = params.get("message");
 </script>
 
 </body>
