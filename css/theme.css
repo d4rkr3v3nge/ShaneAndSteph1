@@ -318,14 +318,6 @@ main.container {
     transform: translateY(0) !important;
 }
 
-/* FOOTER */
-footer {
-    background: linear-gradient(90deg, var(--primary), #5e2430);
-    color: white;
-    text-align: center;
-    padding: 32px;
-    font-size: 1.1rem;
-}
 .photo-grid img {
     image-orientation: from-image;
     transform: rotate(0deg);
@@ -413,7 +405,15 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-
+/* FOOTER */
+footer {
+    background: linear-gradient(90deg, var(--primary), #5e2430);
+    color: white;
+    text-align: center;
+    padding: 32px;
+    font-size: 1.1rem;
+    position: relative; /* REQUIRED for footer-logo positioning */
+}
 .footer-logo {
     position: absolute;
     right: 20px;
