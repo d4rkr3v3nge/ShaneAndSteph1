@@ -81,8 +81,34 @@
         We’re looking forward to celebrating with you!
     </p>
 
+    <h2>Your RSVP Details</h2>
+
+<p><strong>Name:</strong> <span id="name"></span></p>
+<p><strong>Email:</strong> <span id="email"></span></p>
+<p><strong>Attending:</strong> <span id="attending"></span></p>
+<p><strong>Street:</strong> <span id="street"></span></p>
+<p><strong>City:</strong> <span id="city"></span></p>
+<p><strong>State:</strong> <span id="state"></span></p>
+<p><strong>Zipcode:</strong> <span id="zipcode"></span></p>
+<p><strong>Guests:</strong> <span id="guests"></span></p>
+<p><strong>Message:</strong> <span id="message"></span></p>
+
+
     <a href="index.html" class="home-btn">Return to Home</a>
 </div>
+<script>
+  const params = new URLSearchParams(window.location.search);
+
+  document.getElementById("name").textContent = params.get("name");
+  document.getElementById("email").textContent = params.get("email");
+  document.getElementById("attending").textContent = params.get("attending");
+  document.getElementById("street").textContent = params.get("street");
+  document.getElementById("city").textContent = params.get("city");
+  document.getElementById("state").textContent = params.get("state");
+  document.getElementById("zipcode").textContent = params.get("zipcode");
+  document.getElementById("guests").textContent = params.get("guests");
+  document.getElementById("message").textContent = params.get("message");
+</script>
 
 <script>
     // Detect attending status from URL parameters
