@@ -14,7 +14,7 @@ function submitRSVP(event) {
     data.append("ip", "");
     data.append("ua", navigator.userAgent);
 
-    fetch("https://script.google.com/macros/s/AKfycbziGTfbwfR6p5YjV3x0iyHe_1wZNGMbVxYpavFPbLJJSj3TSvIsZl8YwABW2GzESAJ7vQ/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbwGcPJ86yEdCEFBBMPXiXGugA4jgeYqm_w7NotQAr80_YrDBQ3B7Hr1KbpjcHdlPoo/exec", {
         method: "POST",
         body: data
     })
