@@ -15,9 +15,14 @@ function submitRSVP(event) {
     data.append("ua", navigator.userAgent);
 
     fetch("https://script.google.com/macros/s/AKfycbwGcPJ86yEdCEFBBMPXiXGugA4jgeYqm_w7NotQAr80_YrDBQ3B7Hr1KbpjcHdlPoo/exec", {
-        method: "POST",
-        body: data
-    })
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+});
+
     .then(res => res.text())
     .then(result => {
         if (result === "OK") {
