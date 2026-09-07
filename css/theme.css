@@ -326,3 +326,8 @@ footer {
     padding: 32px;
     font-size: 1.1rem;
 }
+.photo-grid img {
+    image-orientation: from-image;
+    transform: rotate(0deg);
+}
+
