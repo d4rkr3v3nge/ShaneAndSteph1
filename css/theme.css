@@ -331,3 +331,20 @@ footer {
     transform: rotate(0deg);
 }
 
+.masonry {
+    column-count: 3;              /* number of columns */
+    column-gap: 20px;             /* spacing between columns */
+    margin-top: 40px;
+}
+
+.masonry img {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    display: block;
+    break-inside: avoid;          /* prevents weird breaks */
+    object-fit: cover;
+}
+
+
