@@ -26,10 +26,11 @@ function submitRSVP(event) {
         body: JSON.stringify(formData)
     })
     .then(() => {
-window.location.href =
-  "https://d4rkr3v3nge.github.io/ShaneAndSteph1/thankyou.html?" +
-  new URLSearchParams(formData).toString();
-
+        // Redirect with user input shown on thankyou.html
+        window.location.href =
+            "https://d4rkr3v3nge.github.io/ShaneAndSteph1/thankyou.html?" +
+            new URLSearchParams(formData).toString();
+    })
     .catch(err => {
         alert("Error submitting RSVP.");
         console.error(err);
