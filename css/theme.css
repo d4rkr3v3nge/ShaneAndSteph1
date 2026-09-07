@@ -415,14 +415,16 @@ footer {
     position: relative; /* REQUIRED for footer-logo positioning */
 }
 /* FOOTER */
-footer {
-    background: linear-gradient(90deg, var(--primary), #5e2430);
-    color: white;
-    text-align: center;
-    padding: 32px;
-    font-size: 1.1rem;
-    position: relative; /* REQUIRED for footer-logo positioning */
+.footer-logo {
+    position: absolute;
+    left: 75%;        /* 3/4 from the left */
+    bottom: 10px;
+    width: 4.4em;     /* twice your previous 2.2em size */
+    opacity: 0.85;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+    transform: translateX(-50%); /* centers the logo on that 75% anchor */
 }
+
 
 
 
