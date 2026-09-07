@@ -346,5 +346,16 @@ footer {
     break-inside: avoid;          /* prevents weird breaks */
     object-fit: cover;
 }
+@media (max-width: 900px) {
+    .masonry {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .masonry {
+        column-count: 1;
+    }
+}
 
 
