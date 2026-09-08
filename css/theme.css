@@ -845,7 +845,7 @@ footer {
 /* FOOTER */
 .footer-logo {
     position: absolute;
-    left: 75%;        /* 3/4 from the left */
+    left: 90%;        /* 3/4 from the left */
     bottom: 10px;
     width: 4.4em;     /* twice your previous 2.2em size */
     opacity: 0.85;
