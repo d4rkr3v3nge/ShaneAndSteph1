@@ -5,11 +5,439 @@
     --text: #2B2B2B;
 }
 
+:root {
+    --primary: #722F37;
+    --secondary: #F5F0E8;
+    --accent: #C9A84C;
+    --text: #2B2B2B;
+}
+
 .jimthorpe-font {
     font-family: 'Bebas Neue', georgia;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
+}
+
+.center-photo img {
+    width: 80%;
+    max-width: 250px;
+    border-radius: 12px;
+    opacity: 0.95;
+    display: block;
+    margin: 0 auto 20px;   /* THIS centers the image */
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--secondary);
+    color: var(--text);
+    font-family: Georgia, serif;
+    overflow-x: hidden;
+}
+
+.hero {
+    background: var(--primary); /* solid maroon */
+    color: white;
+    text-align: center;
+    padding: 160px 20px;
+    animation: heroFade 1.8s ease;
+}
+
+
+@keyframes heroFade {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 18px rgba(0,0,0,0.4);
+}
+
+.hero p {
+    font-size: 1.6rem;
+    opacity: 0.95;
+}
+
+.hero-btn {
+    background: var(--accent);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    transition: box-shadow 0.3s ease;
+}
+
+.hero-btn:hover {
+    box-shadow: 0 0 18px rgba(201,168,76,0.7);
+}
+
+/* SAVE THE DATE */
+.save-date {
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 22px 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+
+
+/* NAVIGATION */
+.nav {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.75);
+    border-bottom: 1px solid var(--accent);
+    padding: 14px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.nav a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+    width: 100%;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px 60px;
+}
+
+/* Push content below sticky nav */
+main.container {
+    margin-top: 80px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--primary);
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.gold-divider {
+    height: 3px;
+    width: 90px;
+    background: var(--accent);
+    margin: 20px auto 30px;
+    border-radius: 3px;
+}
+
+/* FADE-IN SECTIONS */
+.fade-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s ease;
+}
+
+/* Force fade-section visible on RSVP page */
+.fade-section {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* CARDS */
+.timeline-item,
+.event-card {
+    background: #fff;
+    border-left: 4px solid var(--accent);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover,
+.event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+}
+
+/* FORMS */
+.form-control {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 22px;
+    border-radius: 6px;
+    border: 1px solid var(--accent);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.btn {
+    background: var(--primary);
+    color: white;
+    padding: 12px 26px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    box-shadow: 0 0 12px rgba(201,168,76,0.6);
+}
+
+/* SLIDESHOW */
+.slideshow {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.slideshow img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1.4rem;
+}
+
+.slide-btn:nth-of-type(1) {
+    left: 10px;
+}
+
+.slide-btn:nth-of-type(2) {
+    right: 10px;
+}
+
+/* FLOATING RSVP */
+.floating-rsvp {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--accent);
+    color: white;
+    padding: 14px 26px;
+    border-radius: 50px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 2000;
+    transition: box-shadow 0.3s ease;
+}
+
+.floating-rsvp:hover {
+    box-shadow: 0 0 18px rgba(201,168,76,0.7);
+}
+
+/* RSVP FORM FIXES */
+.rsvp-form, #rsvpForm {
+    display: block;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    margin-top: 40px;
+    color: #2B2B2B;
+}
+
+.rsvp-form label,
+#rsvpForm label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea,
+#rsvpForm input,
+#rsvpForm select,
+#rsvpForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.submit-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Force RSVP form visible */
+#rsvpForm {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.photo-grid img {
+    image-orientation: from-image;
+    transform: rotate(0deg);
+}
+
+.masonry {
+    column-count: 3;              /* number of columns */
+    column-gap: 20px;             /* spacing between columns */
+    margin-top: 40px;
+}
+
+.masonry img {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    display: block;
+    break-inside: avoid;          /* prevents weird breaks */
+    object-fit: cover;
+}
+@media (max-width: 900px) {
+    .masonry {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .masonry {
+        column-count: 1;
+    }
+}
+
+/* LIGHTBOX */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.3);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.schedule-photo img {
+    width: 100%;
+    max-width: 700px;
+    display: block;
+    margin: 25px auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+.venmo-box {
+    text-align: center;
+    background: #faf7f2;
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 450px;
+    margin: 30px auto;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.venmo-qr {
+    width: 160px;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+/* FOOTER */
+footer {
+    background: linear-gradient(90deg, var(--primary), #5e2430);
+    color: white;
+    text-align: center;
+    padding: 32px;
+    font-size: 1.1rem;
+    position: relative; /* REQUIRED for footer-logo positioning */
+}
+/* FOOTER */
+.footer-logo {
+    position: absolute;
+    left: 75%;        /* 3/4 from the left */
+    bottom: 10px;
+    width: 4.4em;     /* twice your previous 2.2em size */
+    opacity: 0.85;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+    transform: translateX(-50%); /* centers the logo on that 75% anchor */
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 3.2rem;
+    color: #7a1f1f;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .center-photo img {
