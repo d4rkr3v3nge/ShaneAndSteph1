@@ -2,34 +2,68 @@ function submitRSVP(event) {
     event.preventDefault();
 
     const form = document.getElementById("rsvpForm");
+
+    // Bot trap
+    if (form.trap.value !== "") {
+        return; // ignore bots silently
+    }
+
+    // Collect all form data
     const formData = {
         name: form.name.value,
         email: form.email.value,
         attending: form.attending.value,
+        invitationOnly: form.invitationOnly.value,
         street: form.street.value,
         city: form.city.value,
         state: form.state.value,
         zipcode: form.zipcode.value,
         guests: form.guests.value,
         message: form.message.value,
-        token: "8Y5Wv99i8PW%b0",
-        ip: "",
         userAgent: navigator.userAgent
     };
 
-    fetch("https://script.google.com/macros/s/AKfycbztHyf0u3p0WV6RGqhJ5j3DYO8CAOx5qASN1uBnBsHvD9WX4OiCtekuiI6iMZFLMRUt/exec", {
+    // Build email payload for your Worker
+    const emailPayload = {
+        to: "shaneosparks@gmail.com",
+        from: "shaneosparks@gmail.com",
+        subject: `RSVP from ${formData.name}`,
+        message: `
+Name: ${formData.name}
+Email: ${formData.email}
+Attending: ${formData.attending}
+Wants Invitation: ${formData.invitationOnly}
+
+Address:
+${formData.street}
+${formData.city}, ${formData.state} ${formData.zipcode}
+
+Guests Total: ${formData.guests}
+
+Message:
+${formData.message}
+
+User Agent:
+${formData.userAgent}
+        `
+    };
+
+    // Send email via Cloudflare Worker
+    fetch("https://wedding-rsvp.shaneosparks.workers.dev/", {
         method: "POST",
-        mode: "no-cors",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(emailPayload)
     })
-    .then(() => {
-        // Redirect with user input shown on thankyou.html
-        window.location.href =
-            "https://d4rkr3v3nge.github.io/ShaneAndSteph1/thankyou.html?" +
-            new URLSearchParams(formData).toString();
+    .then(async (response) => {
+        if (!response.ok) {
+            const errorText = await response.text();
+            alert("Email error: " + errorText);
+            console.error(errorText);
+            return;
+        }
+
+        // Redirect to thank-you page
+        window.location.href = "thankyou.html";
     })
     .catch(err => {
         alert("Error submitting RSVP.");
