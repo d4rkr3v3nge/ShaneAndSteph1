@@ -4,130 +4,33 @@
     <meta charset="UTF-8">
     <title>Thank You – Shane & Stephanie</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Fonts -->
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-
-
-    <style>
-        body {
-            background: #f8f5f2;
-            font-family: Georgia, serif;
-            margin: 0;
-            padding: 0;
-            color: #4a3f35;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 60px auto;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3.2rem;
-            color: #7a1f1f;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .divider {
-            width: 80px;
-            height: 3px;
-            background: #c9a97b;
-            margin: 20px auto;
-            border-radius: 2px;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-top: 30px;
-            color: #7a1f1f;
-        }
-
-        p {
-            font-size: 1.2rem;
-            line-height: 1.7;
-        }
-
-        .detail-box {
-            background: #f3ece6;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        .detail-box p {
-            margin: 8px 0;
-        }
-
-        .home-btn {
-            display: inline-block;
-            margin-top: 35px;
-            padding: 12px 28px;
-            background: #7a1f1f;
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            border-radius: 6px;
-            transition: background 0.3s ease;
-        }
-
-        .home-btn:hover {
-            background: #5c1515;
-        }
-    </style>
+    <link rel="stylesheet" href="css/theme.css">
 </head>
 
 <body>
 
-<div class="container">
-    <h1>Thank You</h1>
-    <div class="divider"></div>
+<main class="container fade-section" style="text-align:center; margin-top:60px;">
 
-    <p style="text-align:center;">
+    <h1 class="jimthorpe-font">Thank You</h1>
+    <div class="gold-divider"></div>
+
+    <p class="jimthorpe-font" style="font-size:1.4rem;">
         Shane and Stephanie are so grateful for your RSVP.
     </p>
 
-    <h2>Your Submission</h2>
+    <p class="jimthorpe-font" style="margin-top:20px;">
+        We look forward to celebrating with you on October 24, 2026.
+    </p>
 
-    <div class="detail-box">
-        <p><strong>Name:</strong> <span id="name"></span></p>
-        <p><strong>Email:</strong> <span id="email"></span></p>
-        <p><strong>Attending:</strong> <span id="attending"></span></p>
-        <p><strong>Invitation:</strong> <span id="invitationOnly"></span></p>
-        <p><strong>Street:</strong> <span id="street"></span></p>
-        <p><strong>City:</strong> <span id="city"></span></p>
-        <p><strong>State:</strong> <span id="state"></span></p>
-        <p><strong>Zipcode:</strong> <span id="zipcode"></span></p>
-        <p><strong>Total Guests:</strong> <span id="guests"></span></p>
-        <p><strong>Message:</strong> <span id="message"></span></p>
-    </div>
+    <a href="index.html" class="btn jimthorpe-font" style="margin-top:40px;">
+        Return to Home
+    </a>
 
-    <a href="index.html" class="home-btn">Return to Home</a>
-</div>
+</main>
 
-<script>
-    const params = new URLSearchParams(window.location.search);
-
-    document.getElementById("name").textContent = params.get("name");
-    document.getElementById("email").textContent = params.get("email");
-    document.getElementById("attending").textContent = params.get("attending");
-    document.getElementById("invitationOnly").textContent = params.get("invitationOnly");
-    document.getElementById("street").textContent = params.get("street");
-    document.getElementById("city").textContent = params.get("city");
-    document.getElementById("state").textContent = params.get("state");
-    document.getElementById("zipcode").textContent = params.get("zipcode");
-    document.getElementById("guests").textContent = params.get("guests");
-    document.getElementById("message").textContent = params.get("message");
-</script>
+<footer class="jimthorpe-font" style="text-align:center; margin-top:60px;">
+    <p>Shane & Stephanie • 2026</p>
+</footer>
 
 </body>
 </html>
