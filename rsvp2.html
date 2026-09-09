@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RSVP – Shane & Stephanie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+
+<body>
+
+<nav class="nav jimthorpe-font">
+    <a href="index.html">Home</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="weekend-schedule.html">Weekend Schedule</a>
+    <a href="rsvp.html" class="active">RSVP</a>
+    <a href="registry.html">Registry</a>
+    <a href="guest-area.html">Guest Area</a>
+    <a href="parking.html">Parking</a>
+    <a href="things-to-do.html">Things To Do</a>
+</nav>
+
+<main class="container fade-section">
+
+    <h2 class="section-title jimthorpe-font">RSVP / Request Invite</h2>
+    <div class="gold-divider"></div>
+
+    <form id="rsvpForm" onsubmit="submitRSVP(event)" class="rsvp-form">
+
+        <!-- Invisible bot trap -->
+        <input type="text" id="trap" name="trap" style="display:none;">
+
+        <label for="name">Name for what the Post Office calls you. If different from what we call you, please add a comment in the last box. </label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="attending">Are you going to be able to make it? </label>
+        <select id="attending" name="attending" required>
+            <option value="">Select one</option>
+            <option value="Yes">Yes, I can't wait to be there to celebrate with you two. </option>
+            <option value="No">No, sorry I can't make it and I have a really great excuse. </option>
+        </select>
+
+        <label for="invitationOnly">Would you like a real fancy paper invitation in the mail? Attendance is not required. </label>
+        <select id="invitationOnly" name="invitationOnly" required>
+            <option value="">Select one</option>
+            <option value="Yes">Yeah! Of Course I do, I want this on my fridge.</option>
+            <option value="No">Nope, save the stamp. </option>
+        </select>
+
+        <label for="address">Address where you get snail mail. We do not share this information with any government agency and will keep it protected, mostly. </label>
+
+        <label for="street">Street Address</label>
+        <input type="text" id="street" name="street" required>
+
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="zipcode">Zipcode</label>
+        <input type="text" id="zipcode" name="zipcode" required>
+
+        <label for="guests">Are you brining any extra people, how many people total? </label>
+        <input type="number" id="guests" name="guests" min="0" required>
+
+        <label for="message">Message (optional). This is where you put anything we need to be aware of such as a food allergy or you may need assistance for the procession. We do have a golf cart for the occassion.</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit" class="jimthorpe-font submit-btn">Submit RSVP</button>
+    </form>
+<p></p>
+    <p class="note">Give it a second before leaving. This is all free hosting without ads or any tracking. So it is slow. </p>
+
+</main>
+
+<footer class="jimthorpe-font">
+    <p>Shane & Stephanie • 2026</p>
+</footer>
+
+<script src="js/rsvp.js"></script>
+</body>
+</html>
