@@ -128,6 +128,7 @@ ${document.getElementById("message").value}
         if (response.ok) {
             status.innerText = "RSVP sent successfully!";
             status.style.color = "green";
+            window.location.href = "thankyou.html";
         } else {
             const errorText = await response.text();
             console.log("Worker error text:", errorText);
