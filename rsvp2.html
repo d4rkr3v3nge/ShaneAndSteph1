@@ -7,7 +7,146 @@
     <link rel="stylesheet" href="css/theme.css">
 </head>
 
+<body><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RSVP – Shane & Stephanie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+
 <body>
+
+<nav class="nav jimthorpe-font">
+    <a href="index.html">Home</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="weekend-schedule.html">Weekend Schedule</a>
+    <a href="rsvp.html" class="active">RSVP</a>
+    <a href="registry.html">Registry</a>
+    <a href="guest-area.html">Guest Area</a>
+    <a href="parking.html">Parking</a>
+    <a href="things-to-do.html">Things To Do</a>
+</nav>
+
+<main class="container fade-section">
+
+    <h2 class="section-title jimthorpe-font">RSVP / Request Invite</h2>
+    <div class="gold-divider"></div>
+
+    <form id="rsvpForm" class="rsvp-form">
+
+        <!-- Invisible bot trap -->
+        <input type="text" id="trap" name="trap" style="display:none;">
+
+        <label for="name">Name for what the Post Office calls you.</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="attending">Are you going to be able to make it?</label>
+        <select id="attending" name="attending" required>
+            <option value="">Select one</option>
+            <option value="Yes">Yes, I can't wait to be there to celebrate with you two.</option>
+            <option value="No">No, sorry I can't make it and I have a really great excuse.</option>
+        </select>
+
+        <label for="invitationOnly">Would you like a real fancy paper invitation in the mail?</label>
+        <select id="invitationOnly" name="invitationOnly" required>
+            <option value="">Select one</option>
+            <option value="Yes">Yeah! Of Course I do, I want this on my fridge.</option>
+            <option value="No">Nope, save the stamp.</option>
+        </select>
+
+        <label for="street">Street Address</label>
+        <input type="text" id="street" name="street" required>
+
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="zipcode">Zipcode</label>
+        <input type="text" id="zipcode" name="zipcode" required>
+
+        <label for="guests">Are you bringing any extra people?</label>
+        <input type="text" id="guests" name="guests" required>
+
+        <label for="message">Message (optional)</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit" class="jimthorpe-font submit-btn">Submit RSVP</button>
+    </form>
+
+    <div id="status" class="jimthorpe-font" style="margin-top: 20px;"></div>
+
+    <p class="note">Give it a second before leaving.</p>
+
+</main>
+
+<footer class="jimthorpe-font">
+    <p>Shane & Stephanie • 2026</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    document.getElementById("rsvpForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        if (document.getElementById("trap").value !== "") {
+            return;
+        }
+
+        const payload = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            attending: document.getElementById("attending").value,
+            invitationOnly: document.getElementById("invitationOnly").value,
+            street: document.getElementById("street").value,
+            city: document.getElementById("city").value,
+            state: document.getElementById("state").value,
+            zipcode: document.getElementById("zipcode").value,
+            guests: document.getElementById("guests").value,
+            message: document.getElementById("message").value
+        };
+
+        const status = document.getElementById("status");
+        status.innerText = "Submitting...";
+        status.style.color = "black";
+
+        try {
+            const response = await fetch("/api/rsvp", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            });
+
+            if (response.ok) {
+                window.location.href = "thankyou.html";
+                return;
+            }
+
+            const text = await response.text();
+            status.innerText = "Error: " + text;
+            status.style.color = "red";
+
+        } catch (err) {
+            console.error("NETWORK ERROR:", err);
+            status.innerText = "Network error — could not reach server.";
+            status.style.color = "red";
+        }
+    });
+
+});
+</script>
+
+</body>
+</html>
+
 
 <nav class="nav jimthorpe-font">
     <a href="index.html">Home</a>
